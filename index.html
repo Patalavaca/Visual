@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Suite">
+<meta name="theme-color" content="#0D0A04">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAC8UlEQVR42u3ZwQ2DMBQFQXdAB5wR/R9SBD0logeQYu8gbQPve06M8effduxfzd3weeACxINXE4SjKonBAZWE4GBKQnAgZSE4ipIIHEJZCMZXFoHRlUVgbGURGFlZBMZVFoFRlUVgTGURGFFpBAZUFoDxlEVgNKURGExZAMZSGoGhlAVgJKURGEhZAMZRGoFhBIBUBGAUpREYRABIAEgxAMZQGoEhBIAEgASABIAEgASAtDAAIwgACQAJAAkACYAFOj+XHgoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAyQD4G7oD4LAAAOCwAADgsAAA4LAAAOCwAADgsAAA4LAAAOCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMAANgJAADsBAAAdgIAADsBAICdAADATgAAYCcAAADAYQEAwGEBAMBhAQDAYQEAwGEBAMBhAQDAYQEAwGEBAMBh7QSAw9oJAIe1EwAOaycAHNZOADisnQBwWDsB4LB2AsBh7QSAw9oJAIe1EwAOaycAHNZOADisnQBwWDsB4LB2AsBh7QSAw9oJAIe1EwAOaycAHNZOADisnQBwWDsB4LB2AsBh7QTAe4fVBQAAAgAAAQCAAABAAAAgAAAQAAAIAAAAAEACQAJAAkACQJoawP0ZQgBIAEgASABIAEgASABI6wKAQOnHD4AAMIgAkKIAIFD68QMgAAyjMgAIlH78ACgPAAKlHz8AygOAQOnHD4DyACBQ+vFDoPzjB0B5ABAo/fghUP7xQ6D844dA+ccPgfKPHwLlHz8Eyj9+CJR//CAo//AhkMcPgjx8EOThgyAPHwZ59EBoggf/Aw2VEjXhxO7NAAAAAElFTkSuQmCC">
+<script>
+(function(){
+  const manifest = "{\"name\": \"Suite\", \"short_name\": \"Suite\", \"start_url\": \".\", \"display\": \"standalone\", \"background_color\": \"#0D0A04\", \"theme_color\": \"#0D0A04\", \"icons\": [{\"src\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAC8UlEQVR42u3ZwQ2DMBQFQXdAB5wR/R9SBD0logeQYu8gbQPve06M8effduxfzd3weeACxINXE4SjKonBAZWE4GBKQnAgZSE4ipIIHEJZCMZXFoHRlUVgbGURGFlZBMZVFoFRlUVgTGURGFFpBAZUFoDxlEVgNKURGExZAMZSGoGhlAVgJKURGEhZAMZRGoFhBIBUBGAUpREYRABIAEgxAMZQGoEhBIAEgASABIAEgASAtDAAIwgACQAJAAkACYAFOj+XHgoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAyQD4G7oD4LAAAOCwAADgsAAA4LAAAOCwAADgsAAA4LAAAOCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMADmsnABzWTgA4rJ0AcFg7AeCwdgLAYe0EgMPaCQCHtRMAANgJAADsBAAAdgIAADsBAICdAADATgAAYCcAAADAYQEAwGEBAMBhAQDAYQEAwGEBAMBhAQDAYQEAwGEBAMBh7QSAw9oJAIe1EwAOaycAHNZOADisnQBwWDsB4LB2AsBh7QSAw9oJAIe1EwAOaycAHNZOADisnQBwWDsB4LB2AsBh7QSAw9oJAIe1EwAOaycAHNZOADisnQBwWDsB4LB2AsBh7QTAe4fVBQAAAgAAAQCAAABAAAAgAAAQAAAIAAAAAEACQAJAAkACQJoawP0ZQgBIAEgASABIAEgASABI6wKAQOnHD4AAMIgAkKIAIFD68QMgAAyjMgAIlH78ACgPAAKlHz8AygOAQOnHD4DyACBQ+vFDoPzjB0B5ABAo/fghUP7xQ6D844dA+ccPgfKPHwLlHz8Eyj9+CJR//CAo//AhkMcPgjx8EOThgyAPHwZ59EBoggf/Aw2VEjXhxO7NAAAAAElFTkSuQmCC\", \"sizes\": \"192x192\", \"type\": \"image/png\"}]}";
+  const blob = new Blob([manifest], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('link');
+  link.rel = 'manifest';
+  link.href = url;
+  document.head.appendChild(link);
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Suite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --gold:#C9A84C;--gold-light:#E8C97A;--gold-dim:#8B6914;--gold-pale:rgba(201,168,76,0.1);
+  --ink:#0D0A04;--ink2:#1A1208;--ink3:#221A08;
+  --parchment:#F5EDD8;--parchment-dim:rgba(245,237,216,0.55);
+  --red:#C0392B;--green:#2E7D52;--amber:#C87F2A;
+  --watch:#E07830;
+}
+html,body{height:100%;background:var(--ink);font-family:'Crimson Pro',serif;color:var(--parchment);overflow:hidden}
+
+/* HEADER */
+#header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--ink);border-bottom:1px solid rgba(201,168,76,0.15);padding:0 16px;height:52px;display:flex;align-items:center;justify-content:space-between}
+#header h1{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);font-weight:400;letter-spacing:2px}
+
+/* TAB BAR */
+#tab-bar{position:fixed;top:52px;left:0;right:0;z-index:99;background:var(--ink);border-bottom:1px solid rgba(201,168,76,0.1);display:flex;overflow-x:auto;scrollbar-width:none}
+#tab-bar::-webkit-scrollbar{display:none}
+.tab-btn{flex-shrink:0;padding:10px 14px;background:none;border:none;border-bottom:2px solid transparent;font-family:'Crimson Pro',serif;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;color:rgba(201,168,76,0.35);cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* VIEWS */
+.tab-view{position:fixed;top:92px;left:0;right:0;bottom:0;overflow-y:auto;display:none;padding:16px 16px 60px;scrollbar-width:thin;scrollbar-color:rgba(201,168,76,0.2) transparent}
+
+/* SHARED */
+.section-title{font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.35);margin-bottom:12px}
+.card{background:var(--ink2);border:1px solid rgba(201,168,76,0.1);border-radius:10px;padding:14px}
+.gold-line{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.3),transparent);margin:20px 0}
+
+/* ── FOODS TAB ── */
+.food-intro{font-size:0.85rem;color:var(--parchment-dim);line-height:1.7;margin-bottom:20px;padding:14px;background:rgba(192,57,43,0.06);border:1px solid rgba(192,57,43,0.15);border-radius:8px}
+.food-item{display:flex;align-items:flex-start;gap:12px;padding:14px;background:var(--ink2);border:1px solid rgba(192,57,43,0.12);border-left:3px solid var(--red);border-radius:0 8px 8px 0;margin-bottom:8px}
+.food-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+.food-name{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--parchment);font-weight:400}
+.food-rule{font-size:0.78rem;color:rgba(245,237,216,0.45);margin-top:3px;line-height:1.4}
+.food-item.ok{border-left-color:var(--green);background:rgba(46,125,82,0.04)}
+.food-item.ok .food-name{color:#7ED4A0}
+
+/* ── MY WHY TAB ── */
+.why-item{padding:16px;background:var(--ink2);border:1px solid rgba(201,168,76,0.08);border-radius:10px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.why-icon{font-size:1.5rem;flex-shrink:0}
+.why-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--gold-light);font-weight:400}
+.why-body{font-size:0.82rem;color:var(--parchment-dim);margin-top:4px;line-height:1.6}
+
+/* ── CALENDAR TAB ── */
+#cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+#cal-nav button{background:none;border:1px solid rgba(201,168,76,0.2);border-radius:8px;width:34px;height:34px;color:var(--gold);font-size:1rem;cursor:pointer}
+#cal-month-lbl{font-family:'Playfair Display',serif;font-size:1rem;color:var(--parchment);letter-spacing:1px}
+.cal-dow-row{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px}
+.cal-dow{text-align:center;font-size:0.62rem;letter-spacing:1px;text-transform:uppercase;color:rgba(201,168,76,0.3);padding:3px 0}
+.food-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+.fc-cell{aspect-ratio:1;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:0.78rem;cursor:pointer;position:relative;border:1px solid transparent;transition:all .15s}
+.fc-cell.empty{background:none;cursor:default}
+.fc-cell.good{background:rgba(46,125,82,0.2);border-color:rgba(46,125,82,0.4);color:#6EC98A}
+.fc-cell.bad{background:rgba(192,57,43,0.15);border-color:rgba(192,57,43,0.3);color:#E57373}
+.fc-cell.holiday{background:rgba(200,127,42,0.15);border-color:rgba(200,127,42,0.3);color:var(--amber)}
+.fc-cell.none{background:rgba(201,168,76,0.04);color:rgba(201,168,76,0.25)}
+.fc-cell.future{background:none;color:rgba(201,168,76,0.15);cursor:default}
+.fc-cell.today-ring{border-color:var(--gold)!important}
+.confession-dot{position:absolute;bottom:2px;right:2px;width:4px;height:4px;border-radius:50%;background:rgba(192,57,43,0.6)}
+.week-won-strip{grid-column:1/-1;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:1px;margin:1px 0;opacity:0.5}
+.cal-legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.leg{display:flex;align-items:center;gap:5px;font-size:0.7rem;color:rgba(201,168,76,0.4)}
+.leg-dot{width:10px;height:10px;border-radius:3px}
+#confess-box{margin-top:16px}
+#confess-box textarea{width:100%;background:rgba(192,57,43,0.05);border:1px solid rgba(192,57,43,0.2);border-radius:8px;padding:10px;color:var(--parchment);font-family:'Crimson Pro',serif;font-size:0.9rem;resize:none;outline:none;line-height:1.5}
+#confess-box textarea::placeholder{color:rgba(245,237,216,0.2)}
+#confess-save{margin-top:8px;padding:8px 20px;background:rgba(192,57,43,0.15);border:1px solid rgba(192,57,43,0.3);border-radius:8px;color:#E57373;font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer;letter-spacing:1px}
+.confess-log{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.confess-entry{font-size:0.8rem;color:rgba(245,237,216,0.4);padding:8px 10px;background:rgba(192,57,43,0.04);border-radius:6px;border-left:2px solid rgba(192,57,43,0.2);line-height:1.5}
+.confess-date{font-size:0.7rem;color:rgba(192,57,43,0.4);margin-bottom:2px}
+
+/* ── WEIGHT TAB ── */
+.weight-current{text-align:center;padding:24px;background:var(--ink2);border:1px solid rgba(201,168,76,0.15);border-radius:12px;margin-bottom:20px}
+.weight-num{font-family:'Playfair Display',serif;font-size:3rem;color:var(--gold);line-height:1}
+.weight-label{font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(201,168,76,0.4);margin-top:6px}
+.weight-input-row{display:flex;gap:8px;margin-bottom:20px}
+.weight-input{flex:1;background:var(--ink2);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:10px 12px;color:var(--parchment);font-family:'Crimson Pro',serif;font-size:1rem;outline:none}
+.weight-save-btn{padding:10px 18px;background:var(--gold);border:none;border-radius:8px;color:var(--ink);font-family:'Playfair Display',serif;font-size:0.9rem;cursor:pointer;font-weight:700}
+.milestone-item{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--ink2);border:1px solid rgba(201,168,76,0.08);border-radius:8px;margin-bottom:8px;transition:all .3s}
+.milestone-item.reached{border-color:rgba(201,168,76,0.4);background:rgba(201,168,76,0.06)}
+.milestone-item.reached .m-weight{color:var(--gold)}
+.milestone-check{width:20px;height:20px;border-radius:50%;border:2px solid rgba(201,168,76,0.25);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.7rem}
+.milestone-item.reached .milestone-check{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.m-weight{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(245,237,216,0.5)}
+.m-msg{font-size:0.78rem;color:var(--parchment-dim);margin-top:2px;line-height:1.4}
+.weight-log{margin-top:20px}
+.weight-log-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(201,168,76,0.06);font-size:0.82rem}
+.wl-date{color:rgba(201,168,76,0.4)}
+.wl-val{color:var(--parchment);font-family:'Playfair Display',serif}
+
+/* ── PROGRESS TAB ── */
+.progress-month{background:var(--ink2);border:1px solid rgba(201,168,76,0.1);border-radius:10px;padding:14px;margin-bottom:12px}
+.pm-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.pm-name{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--parchment)}
+.pm-target{font-size:0.75rem;color:rgba(201,168,76,0.4)}
+.pm-bar-bg{height:6px;background:rgba(201,168,76,0.1);border-radius:3px;overflow:hidden}
+.pm-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:3px;transition:width .5s ease}
+.pm-sub{font-size:0.72rem;color:rgba(201,168,76,0.35);margin-top:5px}
+.deadline-card{background:var(--ink2);border:1px solid rgba(201,168,76,0.12);border-radius:10px;padding:14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.dl-name{font-family:'Playfair Display',serif;font-size:0.95rem;color:var(--parchment)}
+.dl-date{font-size:0.75rem;color:rgba(201,168,76,0.4);margin-top:2px}
+.dl-days{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--gold)}
+.dl-days-label{font-size:0.65rem;color:rgba(201,168,76,0.4);text-align:right;letter-spacing:1px}
+.me-explainer{background:rgba(42,106,154,0.08);border:1px solid rgba(42,106,154,0.2);border-radius:10px;padding:16px;margin-top:20px}
+.me-explainer h3{font-family:'Playfair Display',serif;font-size:1rem;color:#7AB8D8;margin-bottom:10px;font-weight:400}
+.me-explainer p{font-size:0.82rem;color:rgba(245,237,216,0.55);line-height:1.7;margin-bottom:8px}
+
+/* ── WINS TAB ── */
+.wins-intro{font-size:0.82rem;color:var(--parchment-dim);line-height:1.6;margin-bottom:16px;font-style:italic}
+.win-input-row{display:flex;gap:8px;margin-bottom:16px}
+.win-input{flex:1;background:var(--ink2);border:1px solid rgba(201,168,76,0.15);border-radius:8px;padding:10px 12px;color:var(--parchment);font-family:'Crimson Pro',serif;font-size:0.92rem;outline:none}
+.win-input::placeholder{color:rgba(201,168,76,0.15)}
+.win-add-btn{padding:10px 16px;background:var(--gold-pale);border:1px solid rgba(201,168,76,0.3);border-radius:8px;color:var(--gold);font-size:1rem;cursor:pointer}
+.win-item{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:12px 14px;background:var(--ink2);border:1px solid rgba(201,168,76,0.08);border-left:3px solid var(--gold-dim);border-radius:0 8px 8px 0;margin-bottom:8px}
+.win-text{font-size:0.9rem;color:var(--parchment);line-height:1.4;flex:1}
+.win-date{font-size:0.68rem;color:rgba(201,168,76,0.3);margin-top:3px;letter-spacing:1px}
+.win-del{background:none;border:none;color:rgba(201,168,76,0.2);font-size:1rem;cursor:pointer;flex-shrink:0}
+
+/* ── WATCH TAB ── */
+.watch-blurb{font-size:0.82rem;color:rgba(224,120,48,0.55);line-height:1.6;margin-bottom:16px;padding:12px 14px;background:rgba(224,120,48,0.05);border:1px solid rgba(224,120,48,0.12);border-left:3px solid var(--watch);border-radius:0 8px 8px 0;font-style:italic}
+.watch-add-row{display:flex;gap:8px;margin-bottom:12px}
+.watch-cat-sel{background:var(--ink2);border:1px solid rgba(224,120,48,0.2);border-radius:8px;padding:9px 10px;color:rgba(224,120,48,0.7);font-family:'Crimson Pro',serif;font-size:0.85rem;outline:none;flex-shrink:0}
+.watch-text-input{flex:1;background:var(--ink2);border:1px solid rgba(224,120,48,0.15);border-radius:8px;padding:9px 12px;color:var(--parchment);font-family:'Crimson Pro',serif;font-size:0.9rem;outline:none}
+.watch-text-input::placeholder{color:rgba(224,120,48,0.15)}
+.watch-add-btn{padding:9px 14px;background:rgba(224,120,48,0.1);border:1px solid rgba(224,120,48,0.25);border-radius:8px;color:var(--watch);font-size:1rem;cursor:pointer}
+.watch-entry{padding:12px 14px;background:var(--ink2);border:1px solid rgba(224,120,48,0.1);border-left:3px solid var(--watch);border-radius:0 8px 8px 0;margin-bottom:8px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.watch-entry-cat{font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(224,120,48,0.5);margin-bottom:3px}
+.watch-entry-text{font-size:0.88rem;color:var(--parchment);line-height:1.4;flex:1}
+.watch-entry-date{font-size:0.68rem;color:rgba(224,120,48,0.3);margin-top:3px;letter-spacing:1px}
+.watch-del{background:none;border:none;color:rgba(224,120,48,0.2);font-size:1rem;cursor:pointer;flex-shrink:0}
+.watch-empty{text-align:center;padding:40px 20px;color:rgba(224,120,48,0.25);font-size:0.85rem;font-style:italic}
+
+/* TOAST */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink2);border:1px solid rgba(201,168,76,0.3);color:var(--gold);padding:9px 18px;border-radius:20px;font-size:0.85rem;opacity:0;transition:all .3s;pointer-events:none;z-index:999;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* MILESTONE CELEBRATION */
+#milestone-overlay{position:fixed;inset:0;z-index:800;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+#milestone-overlay.show{opacity:1;pointer-events:all}
+.m-celeb-box{text-align:center;padding:40px 32px;max-width:300px;width:90%;background:radial-gradient(ellipse at center,#1E1400,var(--ink));border:1px solid var(--gold);border-radius:20px}
+.m-celeb-icon{font-size:3rem;margin-bottom:12px;display:block}
+.m-celeb-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold);margin-bottom:8px}
+.m-celeb-msg{font-size:0.88rem;color:var(--parchment-dim);line-height:1.6;margin-bottom:20px}
+.m-celeb-close{background:var(--gold);color:var(--ink);border:none;padding:9px 24px;border-radius:8px;font-family:'Playfair Display',serif;font-size:0.9rem;cursor:pointer}
+
+/* ── EXPORT/IMPORT ── */
+#ei-btn{background:none;border:none;color:rgba(201,168,76,0.35);font-size:1.1rem;cursor:pointer;padding:4px 8px;transition:color .2s;flex-shrink:0}
+#ei-btn:active{color:var(--gold)}
+#ei-overlay{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.88);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+#ei-overlay.show{opacity:1;pointer-events:all}
+#ei-box{width:100%;background:#1A1208;border-top:1px solid rgba(201,168,76,0.25);border-radius:20px 20px 0 0;padding:24px 20px 40px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+#ei-overlay.show #ei-box{transform:translateY(0)}
+.ei-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold,#C9A84C);margin-bottom:6px}
+.ei-sub{font-size:0.78rem;color:rgba(201,168,76,0.4);margin-bottom:18px;line-height:1.5}
+.ei-btn-row{display:flex;gap:10px;margin-bottom:16px}
+.ei-action-btn{flex:1;padding:11px;border-radius:8px;font-family:'Playfair Display',serif;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.ei-export-btn{background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:#FFD55A}
+.ei-import-btn{background:rgba(42,184,100,0.1);border:1px solid rgba(42,184,100,0.3);color:#4CAF50}
+#ei-code-area{width:100%;background:rgba(0,0,0,0.3);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:10px;color:rgba(245,237,216,0.7);font-family:monospace;font-size:0.72rem;resize:none;outline:none;min-height:80px;line-height:1.4;margin-bottom:10px;word-break:break-all}
+#ei-code-area::placeholder{color:rgba(201,168,76,0.15)}
+.ei-code-action-row{display:flex;gap:8px}
+.ei-copy-btn{flex:1;padding:9px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.2);border-radius:8px;color:rgba(201,168,76,0.7);font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer}
+.ei-confirm-btn{flex:1;padding:9px;background:rgba(42,184,100,0.15);border:1px solid rgba(42,184,100,0.3);border-radius:8px;color:#4CAF50;font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer;display:none}
+.ei-close-btn{padding:9px 20px;background:none;border:1px solid rgba(201,168,76,0.15);border-radius:8px;color:rgba(201,168,76,0.4);font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div id="header"><h1>Suite</h1><button id="ei-btn" onclick="eiOpen()" title="Backup data">⬆⬇</button></div>
+
+<div id="tab-bar">
+  <button class="tab-btn active" onclick="showTab('foods')">Foods</button>
+  <button class="tab-btn" onclick="showTab('why')">My Why</button>
+  <button class="tab-btn" onclick="showTab('calendar')">Calendar</button>
+  <button class="tab-btn" onclick="showTab('weight')">Weight</button>
+  <button class="tab-btn" onclick="showTab('progress')">Progress</button>
+  <button class="tab-btn" onclick="showTab('wins')">Wins</button>
+  <button class="tab-btn" onclick="showTab('watch')">Watch</button>
+</div>
+
+<!-- FOODS -->
+<div class="tab-view" id="tab-foods">
+  <div class="section-title">Banned foods</div>
+  <div class="food-intro">These are off the table. Not forever — until target. Every time you reach for one, this list is why you don't.</div>
+
+  <div class="food-item"><div class="food-icon">🍫</div><div><div class="food-name">Chocolate</div><div class="food-rule">All forms. No exceptions.</div></div></div>
+  <div class="food-item"><div class="food-icon">🥤</div><div><div class="food-name">Crisps</div><div class="food-rule">All varieties. If it's in a packet and crunchy, it's banned.</div></div></div>
+  <div class="food-item"><div class="food-icon">🍕</div><div><div class="food-name">Takeaways</div><div class="food-rule">Chinese, Indian, pizza — banned. Yara and Thai are OK.</div></div></div>
+  <div class="food-item"><div class="food-icon">🧀</div><div><div class="food-name">Cheese & Nuts</div><div class="food-rule">Until target weight. Too calorie-dense, too easy to overdo.</div></div></div>
+  <div class="food-item"><div class="food-icon">🍬</div><div><div class="food-name">Sugar & Sweets</div><div class="food-rule">All added sugar. Sweets, biscuits, cakes.</div></div></div>
+  <div class="food-item"><div class="food-icon">🍞</div><div><div class="food-name">Bread</div><div class="food-rule">Shop-bought banned. Homemade with eggs is OK.</div></div></div>
+  <div class="food-item"><div class="food-icon">🥣</div><div><div class="food-name">Cereal</div><div class="food-rule">Banned except porridge or shredded wheat — breakfast only.</div></div></div>
+  <div class="food-item"><div class="food-icon">🍊</div><div><div class="food-name">Fruit juice</div><div class="food-rule">Max 1 diluted glass per day.</div></div></div>
+  <div class="food-item"><div class="food-icon">🍺</div><div><div class="food-name">Alcohol</div><div class="food-rule">Home: max 2 drinks/week, stop 9pm weeknights. Out: 3-pint ceiling.</div></div></div>
+
+  <div class="gold-line"></div>
+  <div class="section-title" style="margin-bottom:10px">The rules in plain English</div>
+  <div class="food-item ok"><div class="food-icon">✓</div><div><div class="food-name">Protein at every meal</div><div class="food-rule">Eggs, fish, chicken, Greek yoghurt. Sets appetite tone for the day.</div></div></div>
+  <div class="food-item ok"><div class="food-icon">✓</div><div><div class="food-name">Protein before snacking</div><div class="food-rule">Eat something with protein first. Then decide if you still want the other thing. Often you won't.</div></div></div>
+  <div class="food-item ok"><div class="food-icon">✓</div><div><div class="food-name">Stop eating 3–4 hours before sleep</div><div class="food-rule">Late eating raises cortisol overnight. Kitchen closes.</div></div></div>
+  <div class="food-item ok"><div class="food-icon">✓</div><div><div class="food-name">80% full is the target</div><div class="food-rule">Satiety lags behind eating by 20 minutes. Stop before you feel full.</div></div></div>
+</div>
+
+<!-- MY WHY -->
+<div class="tab-view" id="tab-why">
+  <div class="section-title">Why this matters</div>
+
+  <div class="why-item"><div class="why-icon">👔</div><div><div class="why-title">The suit. The stag. The wedding.</div><div class="why-body">London October. Dublin November. John's wedding January. You want to be there feeling good — not self-conscious, not avoiding photos. These dates are fixed. The weight isn't.</div></div></div>
+  <div class="why-item"><div class="why-icon">🪞</div><div><div class="why-title">Confidence and how you carry yourself</div><div class="why-body">You know the difference. Clothes that fit. Walking into a room differently. This isn't vanity — it's the version of yourself you want back.</div></div></div>
+  <div class="why-item"><div class="why-icon">🧬</div><div><div class="why-title">Diabetes risk — your dad</div><div class="why-body">Your father had type 2 diabetes. Excess weight around the middle is the primary modifiable risk factor. This one is not abstract.</div></div></div>
+  <div class="why-item"><div class="why-icon">🫀</div><div><div class="why-title">ME and your lymphatic system</div><div class="why-body">Fat tissue physically compresses lymphatic vessels, reducing drainage capacity. Every stone lost reduces that compression. Weight loss and ME recovery are the same fight.</div></div></div>
+  <div class="why-item"><div class="why-icon">⚡</div><div><div class="why-title">Energy</div><div class="why-body">Carrying extra weight costs energy continuously — every step, every movement. Losing it doesn't just look different. It feels different. You've been there before.</div></div></div>
+  <div class="why-item"><div class="why-icon">🎾</div><div><div class="why-title">Padel — joint pressure</div><div class="why-body">Every extra stone adds significant force through knees and hips with each movement. Padel is waiting. The weight is the gate.</div></div></div>
+  <div class="why-item"><div class="why-icon">✈️</div><div><div class="why-title">Japan. Venice. South America.</div><div class="why-body">Three trips on the horizon. Walking 25,000 steps through Tokyo. A gondola in Venice. Hiking in South America. You want to be at your best for all of it.</div></div></div>
+  <div class="why-item"><div class="why-icon">🩺</div><div><div class="why-title">Avoiding the doctor's bad news</div><div class="why-body">Blood pressure. Blood sugar. Cholesterol. Weight is the lever that moves all three. Go in with the numbers on your side.</div></div></div>
+  <div class="why-item"><div class="why-icon">💪</div><div><div class="why-title">Proving it to yourself</div><div class="why-body">You've done this before. You know what you look like at target weight. This isn't unknown territory — you're returning to somewhere you've been. The path is familiar.</div></div></div>
+</div>
+
+<!-- CALENDAR -->
+<div class="tab-view" id="tab-calendar">
+  <div id="cal-nav">
+    <button onclick="calNav(-1)">←</button>
+    <div id="cal-month-lbl"></div>
+    <button onclick="calNav(1)">→</button>
+  </div>
+  <div class="cal-dow-row">
+    <div class="cal-dow">M</div><div class="cal-dow">T</div><div class="cal-dow">W</div>
+    <div class="cal-dow">T</div><div class="cal-dow">F</div><div class="cal-dow">S</div><div class="cal-dow">S</div>
+  </div>
+  <div class="food-cal-grid" id="food-cal-grid"></div>
+  <div class="cal-legend">
+    <div class="leg"><div class="leg-dot" style="background:rgba(46,125,82,0.4)"></div>Good</div>
+    <div class="leg"><div class="leg-dot" style="background:rgba(192,57,43,0.3)"></div>Bad</div>
+    <div class="leg"><div class="leg-dot" style="background:rgba(200,127,42,0.3)"></div>Holiday</div>
+  </div>
+  <div id="confess-box">
+    <div class="section-title" style="margin-top:16px;margin-bottom:8px">Confession slip</div>
+    <textarea id="confess-input" rows="3" placeholder="Had a bad day — what happened? Get it out, move on."></textarea>
+    <button id="confess-save" onclick="saveConfession()">Log it</button>
+    <div class="confess-log" id="confess-log"></div>
+  </div>
+</div>
+
+<!-- WEIGHT -->
+<div class="tab-view" id="tab-weight">
+  <div class="weight-current">
+    <div class="weight-num" id="weight-display">—</div>
+    <div class="weight-label">Current weight</div>
+  </div>
+  <div class="weight-input-row">
+    <input class="weight-input" id="weight-input" type="text" placeholder="e.g. 13st 4lb or 187lbs">
+    <button class="weight-save-btn" onclick="saveWeight()">Save</button>
+  </div>
+  <div class="section-title">Milestones</div>
+  <div id="milestone-list"></div>
+  <div class="weight-log" id="weight-log-section" style="display:none">
+    <div class="section-title" style="margin-top:16px">Weight log</div>
+    <div id="weight-log-list"></div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="tab-view" id="tab-progress">
+  <div class="section-title">Monthly targets</div>
+  <div id="monthly-targets"></div>
+  <div class="gold-line"></div>
+  <div class="section-title">Key deadlines</div>
+  <div id="deadlines"></div>
+  <div class="me-explainer">
+    <h3>Why weight loss helps your ME</h3>
+    <p>Fat tissue physically compresses lymphatic vessels — the drainage network your Perrin treatment is trying to clear. Every stone lost reduces that compression and improves drainage capacity directly.</p>
+    <p>The thoracic duct, your primary lymphatic drain, runs through the torso. Abdominal fat puts direct mechanical pressure on it. Less weight means better flow — the two goals are biologically the same goal.</p>
+    <p>Weight loss also reduces the SNS load on your system. Adipose tissue produces inflammatory cytokines that keep the sympathetic nervous system in a low-level activated state. Reducing that load gives your nervous system a quieter baseline to recover from.</p>
+  </div>
+</div>
+
+<!-- WINS -->
+<div class="tab-view" id="tab-wins">
+  <div class="wins-intro">Things that went right. Small or large. Record them — they're evidence of who you actually are, not just how you feel on a bad day.</div>
+  <div class="win-input-row">
+    <input class="win-input" id="win-input" type="text" placeholder="Log a win…" maxlength="200" onkeydown="if(event.key==='Enter')addWin()">
+    <button class="win-add-btn" onclick="addWin()">+</button>
+  </div>
+  <div id="wins-list"></div>
+</div>
+
+<!-- WATCH -->
+<div class="tab-view" id="tab-watch">
+  <div class="section-title" style="color:rgba(224,120,48,0.5)">Watch</div>
+  <div class="watch-blurb">Not failures. Not wins. Things to notice. The patterns that creep in — too much of a good thing, the huge portion, the late drink. Log it while it's fresh. Awareness before change.</div>
+  <div class="watch-add-row">
+    <select class="watch-cat-sel" id="watch-cat">
+      <option value="portions">🍽 Portions</option>
+      <option value="alcohol">🍺 Alcohol</option>
+      <option value="late">🌙 Late eating</option>
+      <option value="energy">⚡ Energy</option>
+      <option value="mood">🌊 Mood</option>
+      <option value="other">👁 Other</option>
+    </select>
+    <input class="watch-text-input" id="watch-input" type="text" placeholder="What happened?" maxlength="300" onkeydown="if(event.key==='Enter')addWatch()">
+    <button class="watch-add-btn" onclick="addWatch()">+</button>
+  </div>
+  <div id="watch-list"></div>
+</div>
+
+<!-- MILESTONE CELEBRATION -->
+<div id="milestone-overlay" onclick="closeMilestone()">
+  <div class="m-celeb-box">
+    <span class="m-celeb-icon" id="m-icon">🏆</span>
+    <div class="m-celeb-title" id="m-title"></div>
+    <div class="m-celeb-msg" id="m-msg"></div>
+    <button class="m-celeb-close" onclick="closeMilestone()">Keep going</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── STORAGE ──
+const KEY='suite_v2';
+function ld(){return JSON.parse(localStorage.getItem(KEY)||'{}')}
+function sv(d){localStorage.setItem(KEY,JSON.stringify(d))}
+
+// ── TABS ──
+function showTab(name){
+  document.querySelectorAll('.tab-view').forEach(v=>v.style.display='none');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).style.display='block';
+  document.querySelectorAll('.tab-btn').forEach(b=>{if(b.textContent.toLowerCase().includes(name.slice(0,3)))b.classList.add('active')});
+  if(name==='calendar')renderFoodCal();
+  if(name==='weight'){renderMilestones();renderWeightLog();}
+  if(name==='progress'){renderProgress();}
+  if(name==='wins')renderWins();
+  if(name==='watch')renderWatch();
+}
+
+// ── TOAST ──
+let tTimer;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tTimer);tTimer=setTimeout(()=>t.classList.remove('show'),2000)}
+
+// ─────────────────────────────────────
+// FOOD CALENDAR
+// ─────────────────────────────────────
+let calMonth=new Date();
+function calNav(d){calMonth=new Date(calMonth.getFullYear(),calMonth.getMonth()+d,1);renderFoodCal()}
+function dateKey(d){return d.toISOString().slice(0,10)}
+function todayKey(){return dateKey(new Date())}
+
+function tapDay(k){
+  const d=ld();if(!d.food)d.food={};
+  const cur=d.food[k]||'none';
+  const cycle={none:'good',good:'bad',bad:'holiday',holiday:'none'};
+  d.food[k]=cycle[cur];
+  sv(d);renderFoodCal();
+}
+
+function renderFoodCal(){
+  const d=ld();const food=d.food||{};
+  const y=calMonth.getFullYear(),m=calMonth.getMonth();
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('cal-month-lbl').textContent=months[m]+' '+y;
+  const firstDow=(new Date(y,m,1).getDay()||7)-1;
+  const totalDays=new Date(y,m+1,0).getDate();
+  const grid=document.getElementById('food-cal-grid');
+  grid.innerHTML='';
+  const today=todayKey();
+  // blank cells
+  for(let i=0;i<firstDow;i++){const c=document.createElement('div');c.className='fc-cell empty';grid.appendChild(c)}
+  for(let day=1;day<=totalDays;day++){
+    const k=dateKey(new Date(y,m,day));
+    const state=food[k]||'none';
+    const isFuture=k>today;
+    const cell=document.createElement('div');
+    cell.className='fc-cell '+(isFuture?'future':state);
+    if(k===today)cell.classList.add('today-ring');
+    cell.textContent=day;
+    if(!isFuture)cell.onclick=()=>tapDay(k);
+    grid.appendChild(cell);
+    // week won strip on Sunday
+    const cellDate=new Date(y,m,day);
+    if(cellDate.getDay()===0&&!isFuture){
+      const mon=new Date(cellDate);mon.setDate(cellDate.getDate()-6);
+      const weekKeys=Array.from({length:7},(_,i)=>dateKey(new Date(mon.getFullYear(),mon.getMonth(),mon.getDate()+i)));
+      const allGood=weekKeys.every(wk=>food[wk]==='good'||food[wk]==='holiday');
+      if(allGood){const strip=document.createElement('div');strip.className='week-won-strip';grid.appendChild(strip)}
+    }
+  }
+  renderConfessLog();
+}
+
+function saveConfession(){
+  const txt=document.getElementById('confess-input').value.trim();
+  if(!txt)return;
+  const d=ld();if(!d.confessions)d.confessions=[];
+  d.confessions.unshift({text:txt,date:todayKey()});
+  sv(d);document.getElementById('confess-input').value='';
+  renderConfessLog();toast('Logged — now move on');
+}
+
+function renderConfessLog(){
+  const d=ld();const list=document.getElementById('confess-log');
+  const entries=(d.confessions||[]).slice(0,10);
+  list.innerHTML=entries.map(e=>`<div class="confess-entry"><div class="confess-date">${e.date}</div>${e.text}</div>`).join('');
+}
+
+// ─────────────────────────────────────
+// WEIGHT
+// ─────────────────────────────────────
+const MILESTONES=[
+  {lbs:182,display:'13st',icon:'🌱',msg:'First stone down from start. The body is changing — even if you can\'t see it yet, the numbers don\'t lie.'},
+  {lbs:174,display:'12st 8',icon:'📉',msg:'Halfway to target. Clothes are looser. Energy is different. You\'re doing this.'},
+  {lbs:170,display:'12st 4',icon:'🔓',msg:'London and Dublin unlock. The stag weekends are now fully yours — book those jeans.'},
+  {lbs:168,display:'12st 2',icon:'⚡',msg:'Almost there. The last few pounds before sub-12. This is where most people stop. You don\'t.'},
+  {lbs:168,display:'12st 2',icon:'⚡',msg:'Almost there. The last few pounds before sub-12. This is where most people stop. You don\'t.'},
+  {lbs:164,display:'12st',icon:'🎾',msg:'Padel unlocks. The wedding is yours. John\'s big day — you\'re there looking exactly how you want to look.'},
+  {lbs:162,display:'11st 12',icon:'🏆',msg:'Target weight. This is it. Everything you built this year — the steps, the WTD wins, the diet — this is what it was for.'},
+];
+
+function lbsFromStr(str){
+  str=str.toLowerCase().replace(/\s+/g,'');
+  if(str.includes('st')){
+    const parts=str.split('st');const st=parseFloat(parts[0])||0;
+    const lb=parseFloat((parts[1]||'').replace('lb',''))||0;
+    return Math.round(st*14+lb);
+  }
+  return parseFloat(str)||0;
+}
+function lbsToDisplay(lbs){
+  const st=Math.floor(lbs/14);const lb=Math.round(lbs%14);
+  return lb>0?st+'st '+lb+'lb':st+'st';
+}
+
+function saveWeight(){
+  const raw=document.getElementById('weight-input').value.trim();
+  if(!raw)return;
+  const lbs=lbsFromStr(raw);
+  if(!lbs||lbs<50||lbs>400){toast('Enter weight e.g. 13st 4lb');return;}
+  const d=ld();if(!d.weights)d.weights=[];
+  const prev=d.weights.length?d.weights[d.weights.length-1].lbs:null;
+  d.weights.push({lbs,date:todayKey()});
+  sv(d);
+  document.getElementById('weight-input').value='';
+  renderMilestones();renderWeightLog();
+  toast('Weight saved');
+  // Check milestones
+  if(prev&&lbs<prev){
+    MILESTONES.forEach(ms=>{
+      if(prev>ms.lbs&&lbs<=ms.lbs)showMilestone(ms);
+    });
+  }
+}
+
+function renderMilestones(){
+  const d=ld();
+  const curLbs=d.weights?.length?d.weights[d.weights.length-1].lbs:999;
+  document.getElementById('weight-display').textContent=d.weights?.length?lbsToDisplay(d.weights[d.weights.length-1].lbs):'—';
+  const list=document.getElementById('milestone-list');
+  list.innerHTML=MILESTONES.map(ms=>{
+    const reached=curLbs<=ms.lbs;
+    return `<div class="milestone-item${reached?' reached':''}">
+      <div class="milestone-check">${reached?'✓':''}</div>
+      <div>
+        <div class="m-weight">${ms.display} ${ms.icon}</div>
+        <div class="m-msg">${ms.msg}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderWeightLog(){
+  const d=ld();
+  const entries=d.weights||[];
+  const sec=document.getElementById('weight-log-section');
+  if(!entries.length){sec.style.display='none';return;}
+  sec.style.display='block';
+  document.getElementById('weight-log-list').innerHTML=[...entries].reverse().slice(0,20).map(e=>`
+    <div class="weight-log-item">
+      <span class="wl-date">${e.date}</span>
+      <span class="wl-val">${lbsToDisplay(e.lbs)}</span>
+    </div>`).join('');
+}
+
+function showMilestone(ms){
+  document.getElementById('m-icon').textContent=ms.icon;
+  document.getElementById('m-title').textContent=ms.display+' reached';
+  document.getElementById('m-msg').textContent=ms.msg;
+  document.getElementById('milestone-overlay').classList.add('show');
+}
+function closeMilestone(){document.getElementById('milestone-overlay').classList.remove('show')}
+
+// ─────────────────────────────────────
+// PROGRESS
+// ─────────────────────────────────────
+const MONTHLY_TARGETS=[
+  {month:'May 2026',target:188,label:'13st 6 — first steps'},
+  {month:'June 2026',target:184,label:'13st 2 — building momentum'},
+  {month:'July 2026',target:180,label:'12st 12 — under 13 stone'},
+  {month:'August 2026',target:176,label:'12st 8 — halfway milestone'},
+  {month:'September 2026',target:172,label:'12st 4 — stag weight'},
+  {month:'October 2026',target:169,label:'12st 1 — London stag'},
+  {month:'November 2026',target:166,label:'11st 12 — Dublin stag'},
+  {month:'December 2026',target:163,label:'11st 9 — nearly there'},
+  {month:'January 2027',target:162,label:'11st 8 — target weight'},
+];
+const START_LBS=191;
+
+const DEADLINES=[
+  {name:'Birthday & Padel',date:'2026-08-12',icon:'🎾'},
+  {name:'London Stag',date:'2026-10-17',icon:'🎉'},
+  {name:'Dublin Stag',date:'2026-11-20',icon:'🇮🇪'},
+  {name:"John's Wedding",date:'2027-01-02',icon:'💒'},
+];
+
+function daysUntil(dateStr){
+  const d=new Date(dateStr);const t=new Date();
+  t.setHours(0,0,0,0);
+  return Math.ceil((d-t)/(1000*60*60*24));
+}
+
+function renderProgress(){
+  const d=ld();
+  const curLbs=d.weights?.length?d.weights[d.weights.length-1].lbs:START_LBS;
+  const totalToLose=START_LBS-162;
+  const lost=START_LBS-curLbs;
+
+  const tgt=document.getElementById('monthly-targets');
+  tgt.innerHTML=MONTHLY_TARGETS.map(mt=>{
+    const needed=START_LBS-mt.target;
+    const pct=Math.min(100,Math.max(0,Math.round(lost/needed*100)));
+    return `<div class="progress-month">
+      <div class="pm-header"><div class="pm-name">${mt.month}</div><div class="pm-target">${mt.label}</div></div>
+      <div class="pm-bar-bg"><div class="pm-bar-fill" style="width:${pct}%"></div></div>
+      <div class="pm-sub">${pct}% of the way to this month's target</div>
+    </div>`;
+  }).join('');
+
+  const dl=document.getElementById('deadlines');
+  dl.innerHTML=DEADLINES.map(d=>{
+    const days=daysUntil(d.date);
+    return `<div class="deadline-card">
+      <div><div class="dl-name">${d.icon} ${d.name}</div><div class="dl-date">${d.date}</div></div>
+      <div style="text-align:right"><div class="dl-days">${days}</div><div class="dl-days-label">days</div></div>
+    </div>`;
+  }).join('');
+}
+
+// ─────────────────────────────────────
+// WINS
+// ─────────────────────────────────────
+function addWin(){
+  const txt=document.getElementById('win-input').value.trim();
+  if(!txt)return;
+  const d=ld();if(!d.wins)d.wins=[];
+  d.wins.unshift({text:txt,date:todayKey(),id:Date.now()});
+  sv(d);document.getElementById('win-input').value='';
+  renderWins();toast('Win logged ✓');
+}
+function deleteWin(id){
+  const d=ld();d.wins=(d.wins||[]).filter(w=>w.id!==id);sv(d);renderWins();
+}
+function renderWins(){
+  const d=ld();const wins=d.wins||[];
+  const list=document.getElementById('wins-list');
+  if(!wins.length){list.innerHTML='<div style="font-size:0.85rem;color:rgba(201,168,76,0.25);padding:20px 0;text-align:center;font-style:italic">No wins logged yet. Add the first one.</div>';return;}
+  list.innerHTML=wins.map(w=>`<div class="win-item">
+    <div><div class="win-text">${w.text}</div><div class="win-date">${w.date}</div></div>
+    <button class="win-del" onclick="deleteWin(${w.id})">×</button>
+  </div>`).join('');
+}
+
+// ─────────────────────────────────────
+// WATCH
+// ─────────────────────────────────────
+const WATCH_CATS={portions:'🍽 Portions',alcohol:'🍺 Alcohol',late:'🌙 Late eating',energy:'⚡ Energy',mood:'🌊 Mood',other:'👁 Other'};
+function addWatch(){
+  const txt=document.getElementById('watch-input').value.trim();
+  const cat=document.getElementById('watch-cat').value;
+  if(!txt)return;
+  const d=ld();if(!d.watch)d.watch=[];
+  d.watch.unshift({text:txt,cat,date:todayKey(),id:Date.now()});
+  sv(d);document.getElementById('watch-input').value='';
+  renderWatch();toast('Noted');
+}
+function deleteWatch(id){
+  const d=ld();d.watch=(d.watch||[]).filter(w=>w.id!==id);sv(d);renderWatch();
+}
+function renderWatch(){
+  const d=ld();const items=d.watch||[];
+  const list=document.getElementById('watch-list');
+  if(!items.length){list.innerHTML='<div class="watch-empty">Nothing on watch yet — log patterns as they happen.</div>';return;}
+  list.innerHTML=items.map(w=>`<div class="watch-entry">
+    <div style="flex:1">
+      <div class="watch-entry-cat">${WATCH_CATS[w.cat]||w.cat}</div>
+      <div class="watch-entry-text">${w.text}</div>
+      <div class="watch-entry-date">${w.date}</div>
+    </div>
+    <button class="watch-del" onclick="deleteWatch(${w.id})">×</button>
+  </div>`).join('');
+}
+
+// ── INIT ──
+showTab('foods');
+
+// ═══════════════════════════════════════════════
+// EXPORT / IMPORT
+// ═══════════════════════════════════════════════
+const EI_KEYS = ['suite_v2'];
+
+function eiOpen(){{
+  document.getElementById('ei-code-area').value='';
+  document.getElementById('ei-copy-btn').style.display='block';
+  document.getElementById('ei-confirm-btn').style.display='none';
+  document.getElementById('ei-overlay').classList.add('show');
+}}
+function eiClose(){{document.getElementById('ei-overlay').classList.remove('show')}}
+
+function eiExport(){{
+  const data={};
+  EI_KEYS.forEach(k=>{{const v=localStorage.getItem(k);if(v)data[k]=v;}});
+  const code=btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+  document.getElementById('ei-code-area').value=code;
+  document.getElementById('ei-copy-btn').style.display='block';
+  document.getElementById('ei-confirm-btn').style.display='none';
+}}
+
+function eiImportMode(){{
+  document.getElementById('ei-code-area').value='';
+  document.getElementById('ei-code-area').placeholder='Paste your backup code here...';
+  document.getElementById('ei-copy-btn').style.display='none';
+  document.getElementById('ei-confirm-btn').style.display='block';
+}}
+
+function eiCopy(){{
+  const code=document.getElementById('ei-code-area').value;
+  if(!code)return;
+  navigator.clipboard.writeText(code).then(()=>{{
+    document.getElementById('ei-copy-btn').textContent='Copied ✓';
+    setTimeout(()=>document.getElementById('ei-copy-btn').textContent='Copy code',2000);
+  }}).catch(()=>{{
+    document.getElementById('ei-code-area').select();
+    document.execCommand('copy');
+  }});
+}}
+
+function eiConfirmImport(){{
+  const code=document.getElementById('ei-code-area').value.trim();
+  if(!code)return;
+  try{{
+    const data=JSON.parse(decodeURIComponent(escape(atob(code))));
+    Object.entries(data).forEach(([k,v])=>localStorage.setItem(k,v));
+    eiClose();
+    setTimeout(()=>location.reload(),300);
+  }}catch(e){{
+    alert('Invalid backup code — please check and try again');
+  }}
+}}
+</script>
+<!-- EXPORT/IMPORT -->
+<div id="ei-overlay" onclick="eiClose()">
+  <div id="ei-box" onclick="event.stopPropagation()">
+    <div class="ei-title">Data backup</div>
+    <div class="ei-sub">Export your data as a code to back it up or move it to a new URL. Import to restore.</div>
+    <div class="ei-btn-row">
+      <button class="ei-action-btn ei-export-btn" onclick="eiExport()">⬆ Export</button>
+      <button class="ei-action-btn ei-import-btn" onclick="eiImportMode()">⬇ Import</button>
+    </div>
+    <textarea id="ei-code-area" placeholder="Your backup code will appear here after export. Or paste an import code here."></textarea>
+    <div class="ei-code-action-row">
+      <button class="ei-copy-btn" id="ei-copy-btn" onclick="eiCopy()">Copy code</button>
+      <button class="ei-confirm-btn" id="ei-confirm-btn" onclick="eiConfirmImport()">Restore data</button>
+      <button class="ei-close-btn" onclick="eiClose()">Close</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
