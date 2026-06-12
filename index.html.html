@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Visual">
+<meta name="theme-color" content="#060608">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAE8UlEQVR42u3c3W3lSAxEYQYwzxvEZuxMNojJaX8C8MLjUYts1mfgPPoKh6wyjL6Sqob//Pjxx9+4m/Ij4FAQgUdmISwVkWWwQEQWwcIQWQQLQmwRLAWRJbAIxBbB8BFbAkNHbAkMG7ElMGTElsBwEVsCQ0VsCQwTsSUwRESXwAARWwDDQ2wJDA3RJTAwxBbAsBBdAoNCbAEMCdElMCDEFsBwEF0Cg4ECAIkFMBREl8BAoACAAgBhBTAMRJfAIKAAgAIACgAoAKAAgAIAiwtgCFAAQAEABQAUAFAAQAEABQAUAFAAQAEABQAUoIs///r5KQlL4/+cf20RTwgC/+f9a6P8xhDwP+NfW+U3hYD/Of/aLL8hBPzP+td2+ZtDwP+8fyXI3xgC/u/4V4r8TSHg/55/JcnfEAL+7/rXhqOuLSHg/77/lQU4/Rn8c/zrJvnOz+O/0782yt8WAv59/lcUYOpn87/fv7qH8MaCJoeAf69/dQ7hzcVMDAH/fv/qGkLHQiaFgP8M/5EFSHiYhP8M/+oYQvcSXN/1Py2Av0D8k/zL/6D8k/3LKQT/ZP9yDs0/2b98E8m/0/+KArgXhf9W/3I3Iv9k/7rxfvR/f//nZyTcj8//Of9vFaDriaT/E38iCPzz/OuWZ1J/Rf7tEPC/179ueCvBd+SnhoD/LP+a/l6a35GfFgL+8/xr8pvJnpCfEgL+M/3rjSF0y3eHgP9c/zo9hCnyXSHgP9u/Th+RTZLvOCLkP9u/Tg3hzaOuiSHgf4d/PT2IU9/wfXV5JwPAf5//pDfDPbq00yHgv8O/NsrfFgL+ff5XFGDqZ/O/37+6h/DGgiaHgH+vf3UO4c3FTAwB/37/6hpCx0ImhYD/DP+RBdh4Xf4z/atjCN1LcH3X/7QA/gLxT/Iv/4PyT/YvpxD8k/3LOTT/ZP/yTST/Tv8rCuBeFP5b/cvdiPyT/evS+9E/PiPkfnz+D/l/qwCNTyR9fJWlT2Txf9i/Lnom9eNXWfZMLv8D/nXJWwk+vsuStzLwP+RfF7yX5uN3ufy9PPwP+tdbQ+iSnxIC/jP9640hdMt3h4D/XP86PYQp8l0h4D/bv04fkU2S7zgi5D/bv04N4c2jrokh4H+Hfz09iFPf8H11eScDwH+f/6Q3wz26tNMh4L/DvzbK3xYC/n3+VxRg6mfzv9+/uofwxoImh4B/r391DuHNxUwMAf9+/+oaQsdCJoWA/wz/kQXYeF3+M/2rYwjdS3B91/+0AP4C8U/yL/+D8k/2L6cQ/JP9yzk0/2T/8k0k/07/KwrgXhT+W/3L3Yj8k/3rxvvRO0PAf5f/twrQ9UTSlADw3+NftzyTOjkE/O/1rxveSrApBPxnudb099JsCgH/eZ711hBuWj7/HP96Ywg3Lp9/hn+dHsLNy+e/379OH5Ftgf9O/zo1hE3L57/Xv54exMbF89/rXwkLAxQAUABAAQAFABQACmAIUABAAQAFABQAUAAgoQD//RgEFABQAEABAAUAFABQAEABgL0FUAJEh18BoAAGAgUAQgugBIgOvwJAAQwGyQVQAkSHXwEQXwAlQHT4FQDxBVACRIdfARBfACVAdPiVAPHhVwDEF0AJEB1+JUB8+JUA8eFXAsSHXwkQH34lQHz4lQDx4VcCxIdfERAffCWA8CsCBF8RIPiKAMFXBgi9QuCCwP8Dq60hx2YijLgAAAAASUVORK5CYII=">
+<script>
+(function(){
+  const manifest = "{\"name\": \"Visual\", \"short_name\": \"Visual\", \"start_url\": \".\", \"display\": \"standalone\", \"background_color\": \"#060608\", \"theme_color\": \"#060608\", \"icons\": [{\"src\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAE8UlEQVR42u3c3W3lSAxEYQYwzxvEZuxMNojJaX8C8MLjUYts1mfgPPoKh6wyjL6Sqob//Pjxx9+4m/Ij4FAQgUdmISwVkWWwQEQWwcIQWQQLQmwRLAWRJbAIxBbB8BFbAkNHbAkMG7ElMGTElsBwEVsCQ0VsCQwTsSUwRESXwAARWwDDQ2wJDA3RJTAwxBbAsBBdAoNCbAEMCdElMCDEFsBwEF0Cg4ECAIkFMBREl8BAoACAAgBhBTAMRJfAIKAAgAIACgAoAKAAgAIAiwtgCFAAQAEABQAUAFAAQAEABQAUAFAAQAEABQAUoIs///r5KQlL4/+cf20RTwgC/+f9a6P8xhDwP+NfW+U3hYD/Of/aLL8hBPzP+td2+ZtDwP+8fyXI3xgC/u/4V4r8TSHg/55/JcnfEAL+7/rXhqOuLSHg/77/lQU4/Rn8c/zrJvnOz+O/0782yt8WAv59/lcUYOpn87/fv7qH8MaCJoeAf69/dQ7hzcVMDAH/fv/qGkLHQiaFgP8M/5EFSHiYhP8M/+oYQvcSXN/1Py2Av0D8k/zL/6D8k/3LKQT/ZP9yDs0/2b98E8m/0/+KArgXhf9W/3I3Iv9k/7rxfvR/f//nZyTcj8//Of9vFaDriaT/E38iCPzz/OuWZ1J/Rf7tEPC/179ueCvBd+SnhoD/LP+a/l6a35GfFgL+8/xr8pvJnpCfEgL+M/3rjSF0y3eHgP9c/zo9hCnyXSHgP9u/Th+RTZLvOCLkP9u/Tg3hzaOuiSHgf4d/PT2IU9/wfXV5JwPAf5//pDfDPbq00yHgv8O/NsrfFgL+ff5XFGDqZ/O/37+6h/DGgiaHgH+vf3UO4c3FTAwB/37/6hpCx0ImhYD/DP+RBdh4Xf4z/atjCN1LcH3X/7QA/gLxT/Iv/4PyT/YvpxD8k/3LOTT/ZP/yTST/Tv8rCuBeFP5b/cvdiPyT/evS+9E/PiPkfnz+D/l/qwCNTyR9fJWlT2Txf9i/Lnom9eNXWfZMLv8D/nXJWwk+vsuStzLwP+RfF7yX5uN3ufy9PPwP+tdbQ+iSnxIC/jP9640hdMt3h4D/XP86PYQp8l0h4D/bv04fkU2S7zgi5D/bv04N4c2jrokh4H+Hfz09iFPf8H11eScDwH+f/6Q3wz26tNMh4L/DvzbK3xYC/n3+VxRg6mfzv9+/uofwxoImh4B/r391DuHNxUwMAf9+/+oaQsdCJoWA/wz/kQXYeF3+M/2rYwjdS3B91/+0AP4C8U/yL/+D8k/2L6cQ/JP9yzk0/2T/8k0k/07/KwrgXhT+W/3L3Yj8k/3rxvvRO0PAf5f/twrQ9UTSlADw3+NftzyTOjkE/O/1rxveSrApBPxnudb099JsCgH/eZ711hBuWj7/HP96Ywg3Lp9/hn+dHsLNy+e/379OH5Ftgf9O/zo1hE3L57/Xv54exMbF89/rXwkLAxQAUABAAQAFABQACmAIUABAAQAFABQAUAAgoQD//RgEFABQAEABAAUAFABQAEABgL0FUAJEh18BoAAGAgUAQgugBIgOvwJAAQwGyQVQAkSHXwEQXwAlQHT4FQDxBVACRIdfARBfACVAdPiVAPHhVwDEF0AJEB1+JUB8+JUA8eFXAsSHXwkQH34lQHz4lQDx4VcCxIdfERAffCWA8CsCBF8RIPiKAMFXBgi9QuCCwP8Dq60hx2YijLgAAAAASUVORK5CYII=\", \"sizes\": \"192x192\", \"type\": \"image/png\"}]}";
+  const blob = new Blob([manifest], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('link');
+  link.rel = 'manifest';
+  link.href = url;
+  document.head.appendChild(link);
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Visual</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--ink:#060608;--ink2:#0E0E12;--gold:#C9A84C;--gold-pale:rgba(201,168,76,0.1);--parchment:#F0EEF8;--parchment-dim:rgba(240,238,248,0.82)}
+html,body{height:100%;background:var(--ink);font-family:'Crimson Pro',serif;color:var(--parchment);overflow:hidden}
+#header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,6,8,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.1);padding:0 14px;height:52px;display:flex;align-items:center;justify-content:space-between}
+#header-title{font-family:'Playfair Display',serif;font-size:0.85rem;color:rgba(255,213,90,0.82);letter-spacing:3px;text-transform:uppercase}
+#add-btn{background:rgba(201,168,76,0.12);border:1px solid rgba(255,213,90,0.5);border-radius:20px;padding:6px 14px;color:var(--gold);font-family:'Crimson Pro',serif;font-size:0.8rem;cursor:pointer;letter-spacing:1px;transition:all .2s}
+#add-btn:active{background:rgba(255,213,90,0.5)}
+#photo-area{position:fixed;top:52px;left:0;right:0;bottom:80px;overflow:hidden}
+#swiper{width:100%;height:100%;display:flex;transition:transform .3s cubic-bezier(.4,0,.2,1);will-change:transform}
+.slide{flex-shrink:0;width:100%;height:100%;position:relative;display:flex;align-items:center;justify-content:center;background:var(--ink)}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;user-select:none;pointer-events:none}
+.slide-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,transparent 30%,transparent 65%,rgba(0,0,0,0.5) 100%)}
+.slide-cat-label{position:absolute;top:12px;left:50%;transform:translateX(-50%);font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px}
+#dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;align-items:center}
+.dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.3);transition:all .2s}
+.dot.active{background:white;width:18px;border-radius:3px}
+.empty-slide{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:32px;text-align:center}
+.empty-slide .e-icon{font-size:2.5rem;opacity:0.2}
+.empty-slide p{font-size:0.82rem;color:rgba(240,238,248,0.55);line-height:1.6}
+#bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:99;background:rgba(6,6,8,0.97);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.06);padding:10px 12px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+#bottom-bar::-webkit-scrollbar{display:none}
+.bcat-pill{flex-shrink:0;padding:7px 16px;border-radius:24px;font-family:'Crimson Pro',serif;font-size:0.8rem;cursor:pointer;transition:all .2s;white-space:nowrap;background:rgba(255,255,255,0.06);border:1px solid transparent;color:rgba(240,238,248,0.45);display:flex;align-items:center;gap:5px}
+.bcat-pill.active{background:rgba(255,213,90,0.4);border-color:rgba(255,213,90,0.6);color:var(--gold)}
+#add-drawer{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.85);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+#add-drawer.show{opacity:1;pointer-events:all}
+#add-drawer-inner{width:100%;background:#111114;border-top:1px solid rgba(255,213,90,0.45);border-radius:20px 20px 0 0;padding:24px 20px 40px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+#add-drawer.show #add-drawer-inner{transform:translateY(0)}
+.drawer-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold);margin-bottom:16px}
+.cat-select-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px}
+.cat-sel-btn{padding:8px 6px;border-radius:8px;text-align:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:0.72rem;color:rgba(240,238,248,0.75);cursor:pointer;transition:all .15s}
+.cat-sel-btn.selected{background:rgba(255,213,90,0.4);border-color:rgba(255,213,90,0.65);color:var(--gold)}
+.cat-sel-btn .cs-icon{font-size:1.2rem;display:block;margin-bottom:3px}
+.drawer-btn-row{display:flex;gap:10px}
+.drawer-cancel{flex:1;padding:11px;background:none;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:rgba(240,238,248,0.75);font-family:'Crimson Pro',serif;font-size:0.9rem;cursor:pointer}
+.drawer-upload{flex:2;padding:11px;background:var(--gold);border:none;border-radius:8px;color:var(--ink);font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;cursor:pointer;opacity:0.4;transition:opacity .2s}
+.drawer-upload.ready{opacity:1}
+#delete-confirm{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s}
+#delete-confirm.show{opacity:1;pointer-events:all}
+.del-box{background:#111114;border:1px solid rgba(200,50,50,0.3);border-radius:14px;padding:28px 24px;text-align:center;max-width:280px;width:90%}
+.del-box h3{font-family:'Playfair Display',serif;color:#E57373;margin-bottom:8px}
+.del-box p{font-size:0.82rem;color:var(--parchment-dim);margin-bottom:20px;line-height:1.5}
+.del-btn-row{display:flex;gap:10px}
+.del-cancel{flex:1;padding:10px;background:none;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--parchment-dim);font-family:'Crimson Pro',serif;font-size:0.9rem;cursor:pointer}
+.del-confirm{flex:1;padding:10px;background:rgba(200,50,50,0.15);border:1px solid rgba(200,50,50,0.3);border-radius:8px;color:#E57373;font-family:'Crimson Pro',serif;font-size:0.9rem;cursor:pointer}
+#toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink2);border:1px solid rgba(255,213,90,0.55);color:var(--gold);padding:9px 18px;border-radius:20px;font-size:0.85rem;opacity:0;transition:all .3s;pointer-events:none;z-index:999;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#file-input{display:none}
+
+/* ── EXPORT/IMPORT ── */
+#ei-btn{background:none;border:none;color:rgba(255,213,90,0.6);font-size:1.1rem;cursor:pointer;padding:4px 8px;transition:color .2s;flex-shrink:0}
+#ei-btn:active{color:var(--gold)}
+#ei-overlay{position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.88);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .25s}
+#ei-overlay.show{opacity:1;pointer-events:all}
+#ei-box{width:100%;background:#1A1208;border-top:1px solid rgba(255,213,90,0.5);border-radius:20px 20px 0 0;padding:24px 20px 40px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+#ei-overlay.show #ei-box{transform:translateY(0)}
+.ei-title{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--gold,#C9A84C);margin-bottom:6px}
+.ei-sub{font-size:0.78rem;color:rgba(255,213,90,0.65);margin-bottom:18px;line-height:1.5}
+.ei-btn-row{display:flex;gap:10px;margin-bottom:16px}
+.ei-action-btn{flex:1;padding:11px;border-radius:8px;font-family:'Playfair Display',serif;font-size:0.9rem;cursor:pointer;transition:all .2s}
+.ei-export-btn{background:rgba(255,213,90,0.4);border:1px solid rgba(255,213,90,0.55);color:#FFD55A}
+.ei-import-btn{background:rgba(42,184,100,0.1);border:1px solid rgba(42,184,100,0.3);color:#4CAF50}
+#ei-code-area{width:100%;background:rgba(0,0,0,0.3);border:1px solid rgba(255,213,90,0.45);border-radius:8px;padding:10px;color:rgba(245,237,216,0.7);font-family:monospace;font-size:0.72rem;resize:none;outline:none;min-height:80px;line-height:1.4;margin-bottom:10px;word-break:break-all}
+#ei-code-area::placeholder{color:rgba(255,213,90,0.4)}
+.ei-code-action-row{display:flex;gap:8px}
+.ei-copy-btn{flex:1;padding:9px;background:rgba(201,168,76,0.1);border:1px solid rgba(255,213,90,0.45);border-radius:8px;color:rgba(255,213,90,0.88);font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer}
+.ei-confirm-btn{flex:1;padding:9px;background:rgba(42,184,100,0.15);border:1px solid rgba(42,184,100,0.3);border-radius:8px;color:#4CAF50;font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer;display:none}
+.ei-close-btn{padding:9px 20px;background:none;border:1px solid rgba(255,213,90,0.4);border-radius:8px;color:rgba(255,213,90,0.65);font-family:'Crimson Pro',serif;font-size:0.85rem;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="header">
+  <div id="header-title">✦ <span id="header-cat-name">All</span></div>
+  <button id="ei-btn" onclick="eiOpen()" title="Backup data" style="margin-right:4px">⬆⬇</button><button id="add-btn" onclick="openAddDrawer()">+ Add Photo</button>
+</div>
+<div id="bottom-bar"></div>
+<div id="photo-area">
+  <div id="swiper"></div>
+</div>
+<div id="add-drawer" onclick="closeAddDrawer()">
+  <div id="add-drawer-inner" onclick="event.stopPropagation()">
+    <div class="drawer-title">Add to which category?</div>
+    <div class="cat-select-grid" id="cat-select-grid"></div>
+    <div class="drawer-btn-row">
+      <button class="drawer-cancel" onclick="closeAddDrawer()">Cancel</button>
+      <button class="drawer-upload" id="drawer-upload-btn" onclick="triggerUpload()">Choose photo</button>
+    </div>
+  </div>
+</div>
+<div id="delete-confirm">
+  <div class="del-box">
+    <h3>Remove this photo?</h3>
+    <p>It will be gone from your board.</p>
+    <div class="del-btn-row">
+      <button class="del-cancel" onclick="cancelDelete()">Keep it</button>
+      <button class="del-confirm" onclick="confirmDelete()">Remove</button>
+    </div>
+  </div>
+</div>
+<input type="file" id="file-input" accept="image/*" multiple onchange="handleFiles(event)">
+<div id="toast"></div>
+<script>
+const CATS=[{id:'all',label:'All',icon:'✨'},{id:'gc',label:'Gran Canaria',icon:'🌊'},{id:'padel',label:'Padel',icon:'🎾'},{id:'travel',label:'Travel',icon:'✈️'},{id:'sauna',label:'Sauna',icon:'🔥'},{id:'social',label:'Social',icon:'🍺'},{id:'places',label:'Places to Visit',icon:'🗺️'}];
+const KEY='aspiration_v1';
+function ld(){return JSON.parse(localStorage.getItem(KEY)||'{"photos":[]}')}
+function sv(d){localStorage.setItem(KEY,JSON.stringify(d))}
+let currentCat='all',currentIdx=0,pendingDeleteId=null,pendingAddCat=null,longPressTimer=null,touchStartX=0,touchStartY=0,swiping=false;
+function getFiltered(){const d=ld();if(currentCat==='all')return d.photos||[];return(d.photos||[]).filter(p=>p.cat===currentCat)}
+function render(){renderBottomBar();renderSlides();updateHeaderTitle()}
+function renderBottomBar(){const bar=document.getElementById('bottom-bar');bar.innerHTML=CATS.map(c=>`<div class="bcat-pill${c.id===currentCat?' active':''}" onclick="setCat('${c.id}')">${c.icon} ${c.label}</div>`).join('')}
+function renderSlides(){
+  const photos=getFiltered();const swiper=document.getElementById('swiper');
+  if(!photos.length){
+    const cat=CATS.find(c=>c.id===currentCat);
+    swiper.innerHTML=`<div class="slide"><div class="empty-slide"><span class="e-icon">${cat.icon}</span><p>No photos in ${cat.label} yet.<br>Tap + Add Photo to start.</p></div></div>`;
+    const ex=document.getElementById('dots');if(ex)ex.remove();currentIdx=0;return;
+  }
+  if(currentIdx>=photos.length)currentIdx=photos.length-1;if(currentIdx<0)currentIdx=0;
+  swiper.innerHTML=photos.map((p,i)=>{const cat=CATS.find(c=>c.id===p.cat)||CATS[0];return`<div class="slide" id="slide-${p.id}"><img src="${p.src}" alt="" draggable="false"><div class="slide-overlay"></div><div class="slide-cat-label">${cat.icon} ${cat.label}</div></div>`}).join('');
+  swiper.style.transition='none';swiper.style.transform=`translateX(-${currentIdx*100}%)`;
+  let dotsEl=document.getElementById('dots');if(!dotsEl){dotsEl=document.createElement('div');dotsEl.id='dots';document.getElementById('photo-area').appendChild(dotsEl)}
+  const vis=Math.min(photos.length,12);dotsEl.innerHTML=Array.from({length:vis},(_,i)=>`<div class="dot${i===currentIdx?' active':''}"></div>`).join('');
+  setupLongPress();setupSwipe();
+}
+function updateDots(){const dotsEl=document.getElementById('dots');if(!dotsEl)return;dotsEl.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===currentIdx))}
+function updateHeaderTitle(){const cat=CATS.find(c=>c.id===currentCat);document.getElementById('header-cat-name').textContent=cat?cat.label:'Visual'}
+function setupSwipe(){
+  const area=document.getElementById('photo-area');const swiper=document.getElementById('swiper');
+  area.ontouchstart=e=>{touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY;swiping=true;swiper.style.transition='none'};
+  area.ontouchmove=e=>{if(!swiping)return;const dx=e.touches[0].clientX-touchStartX;const dy=e.touches[0].clientY-touchStartY;if(Math.abs(dy)>Math.abs(dx)*1.5){swiping=false;return}e.preventDefault();swiper.style.transform=`translateX(calc(-${currentIdx*100}% + ${dx}px))`};
+  area.ontouchend=e=>{if(!swiping)return;swiping=false;const dx=e.changedTouches[0].clientX-touchStartX;const photos=getFiltered();swiper.style.transition='transform .3s cubic-bezier(.4,0,.2,1)';if(dx<-50&&currentIdx<photos.length-1)currentIdx++;else if(dx>50&&currentIdx>0)currentIdx--;swiper.style.transform=`translateX(-${currentIdx*100}%)`;updateDots()};
+  area.ontouchcancel=()=>{swiping=false};
+}
+function setupLongPress(){
+  const swiper=document.getElementById('swiper');
+  swiper.ontouchstart=e=>{const slide=e.target.closest('.slide');if(!slide)return;const id=slide.id.replace('slide-','');touchStartX=e.touches[0].clientX;touchStartY=e.touches[0].clientY;longPressTimer=setTimeout(()=>{pendingDeleteId=id;document.getElementById('delete-confirm').classList.add('show')},600)};
+  swiper.ontouchmove=e=>{if(Math.abs(e.touches[0].clientX-touchStartX)>10||Math.abs(e.touches[0].clientY-touchStartY)>10)cancelLP()};
+  swiper.ontouchend=()=>cancelLP();swiper.ontouchcancel=()=>cancelLP();
+}
+function cancelLP(){if(longPressTimer){clearTimeout(longPressTimer);longPressTimer=null}}
+function cancelDelete(){document.getElementById('delete-confirm').classList.remove('show');pendingDeleteId=null}
+function confirmDelete(){if(!pendingDeleteId)return;const d=ld();d.photos=(d.photos||[]).filter(p=>String(p.id)!==String(pendingDeleteId));sv(d);pendingDeleteId=null;document.getElementById('delete-confirm').classList.remove('show');if(currentIdx>0)currentIdx--;render();toast('Photo removed')}
+function setCat(id){currentCat=id;currentIdx=0;render()}
+function openAddDrawer(){
+  pendingAddCat=null;
+  const grid=document.getElementById('cat-select-grid');
+  grid.innerHTML=CATS.filter(c=>c.id!=='all').map(c=>`<div class="cat-sel-btn" onclick="selectAddCat('${c.id}',this)"><span class="cs-icon">${c.icon}</span>${c.label}</div>`).join('');
+  document.getElementById('drawer-upload-btn').classList.remove('ready');
+  document.getElementById('add-drawer').classList.add('show');
+}
+function selectAddCat(id,el){pendingAddCat=id;document.querySelectorAll('.cat-sel-btn').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');document.getElementById('drawer-upload-btn').classList.add('ready')}
+function closeAddDrawer(){document.getElementById('add-drawer').classList.remove('show');pendingAddCat=null}
+function triggerUpload(){if(!pendingAddCat){toast('Pick a category first');return}document.getElementById('file-input').click()}
+function compressImage(file,cb){const reader=new FileReader();reader.onload=e=>{const img=new Image();img.onload=()=>{const canvas=document.createElement('canvas');const max=1000;let w=img.width,h=img.height;if(w>h){if(w>max){h=Math.round(h*max/w);w=max}}else{if(h>max){w=Math.round(w*max/h);h=max}}canvas.width=w;canvas.height=h;canvas.getContext('2d').drawImage(img,0,0,w,h);cb(canvas.toDataURL('image/jpeg',0.78))};img.src=e.target.result};reader.readAsDataURL(file)}
+function handleFiles(e){const files=Array.from(e.target.files);const cat=pendingAddCat||'travel';closeAddDrawer();let done=0;files.forEach(file=>{compressImage(file,dataUrl=>{const d=ld();if(!d.photos)d.photos=[];d.photos.push({id:Date.now()+Math.random(),src:dataUrl,cat});sv(d);done++;if(done===files.length){render();toast(files.length+' photo'+(files.length>1?'s':'')+' added to '+(CATS.find(c=>c.id===cat)?.label||cat))}})});e.target.value=''}
+let tTimer;function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(tTimer);tTimer=setTimeout(()=>t.classList.remove('show'),2200)}
+render();
+
+// ═══════════════════════════════════════════════
+// EXPORT / IMPORT
+// ═══════════════════════════════════════════════
+const EI_KEYS = ['aspiration_v1'];
+
+function eiOpen(){{
+  document.getElementById('ei-code-area').value='';
+  document.getElementById('ei-copy-btn').style.display='block';
+  document.getElementById('ei-confirm-btn').style.display='none';
+  document.getElementById('ei-overlay').classList.add('show');
+}}
+function eiClose(){{document.getElementById('ei-overlay').classList.remove('show')}}
+
+function eiExport(){{
+  const data={};
+  EI_KEYS.forEach(k=>{{const v=localStorage.getItem(k);if(v)data[k]=v;}});
+  const code=btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+  document.getElementById('ei-code-area').value=code;
+  document.getElementById('ei-copy-btn').style.display='block';
+  document.getElementById('ei-confirm-btn').style.display='none';
+}}
+
+function eiImportMode(){{
+  document.getElementById('ei-code-area').value='';
+  document.getElementById('ei-code-area').placeholder='Paste your backup code here...';
+  document.getElementById('ei-copy-btn').style.display='none';
+  document.getElementById('ei-confirm-btn').style.display='block';
+}}
+
+function eiCopy(){{
+  const code=document.getElementById('ei-code-area').value;
+  if(!code)return;
+  navigator.clipboard.writeText(code).then(()=>{{
+    document.getElementById('ei-copy-btn').textContent='Copied ✓';
+    setTimeout(()=>document.getElementById('ei-copy-btn').textContent='Copy code',2000);
+  }}).catch(()=>{{
+    document.getElementById('ei-code-area').select();
+    document.execCommand('copy');
+  }});
+}}
+
+function eiConfirmImport(){{
+  const code=document.getElementById('ei-code-area').value.trim();
+  if(!code)return;
+  try{{
+    const data=JSON.parse(decodeURIComponent(escape(atob(code))));
+    Object.entries(data).forEach(([k,v])=>localStorage.setItem(k,v));
+    eiClose();
+    setTimeout(()=>location.reload(),300);
+  }}catch(e){{
+    alert('Invalid backup code — please check and try again');
+  }}
+}}
+</script>
+<!-- EXPORT/IMPORT -->
+<div id="ei-overlay" onclick="eiClose()">
+  <div id="ei-box" onclick="event.stopPropagation()">
+    <div class="ei-title">Data backup</div>
+    <div class="ei-sub">Export your data as a code to back it up or move it to a new URL. Import to restore.</div>
+    <div class="ei-btn-row">
+      <button class="ei-action-btn ei-export-btn" onclick="eiExport()">⬆ Export</button>
+      <button class="ei-action-btn ei-import-btn" onclick="eiImportMode()">⬇ Import</button>
+    </div>
+    <textarea id="ei-code-area" placeholder="Your backup code will appear here after export. Or paste an import code here."></textarea>
+    <div class="ei-code-action-row">
+      <button class="ei-copy-btn" id="ei-copy-btn" onclick="eiCopy()">Copy code</button>
+      <button class="ei-confirm-btn" id="ei-confirm-btn" onclick="eiConfirmImport()">Restore data</button>
+      <button class="ei-close-btn" onclick="eiClose()">Close</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
